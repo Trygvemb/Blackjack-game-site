@@ -1,3 +1,22 @@
+// psudocode: tasks
+//set player name by user input
+
+//set ace to either 1 or 11 depending on whats best for the hand
+//create dealer, when game starts dealer has 1 card while player has two
+//when hold button is pushed dealer gets one more card, if dealers sum is 16 or less he get another card until he has 17 or more
+// if dealer gets over 21, then he is bust
+//if dealer dosnt bust his hand is compared to player and the one closest to 21 win
+//if dealer gets blackjack = instant loss
+//fix layout, make it pretty
+
+// EXTRA:: 
+// make chips dynamic, start with 200
+// make buttons for betting 10 at a time, but only in the beginning of the game
+// create a betting method, that lets you bet cash and loss them if your hand is worse then dealer or win if its better
+// if player loose he looses all his beettings
+// if he wins, he wins 1 to 1 ex: bet 10 return 20
+// if he wins with blackjack, he wins 3 to 2 or one and a half return ex: bet 10 win 25
+
 let player = {
     name: "Per",
     chips: 200
