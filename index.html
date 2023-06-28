@@ -7,10 +7,12 @@
         <p id="message-el">Want to play a round?</p>
         <div id="table">
             <div class="hands">
+                <h3 id="player-id">PLAYER</h3>
                 <p id="cards-el">Your Cards:</p>
                 <p id="sum-el">Your Sum:</p>
             </div>
             <div class="hands">
+                <h3 id="dealer-id">DEALER</h3>
                 <p id="dealer-cards-el">Dealer Cards:</p>
                 <p id="dealer-sum-el">Dealer Sum:</p>
             </div>
@@ -18,7 +20,7 @@
         <div>
             <button onclick="startGame()">START GAME</button>
             <button onclick="newCard()">HIT</button>
-            <button>STAND</button>
+            <button onclick="stand()">STAND</button>
         </div>
         <p id="player-el"></p>
         <script src="index.js"></script>

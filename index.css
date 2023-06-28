@@ -10,6 +10,9 @@ body {
 h1 {
     color: goldenrod;
 }
+h3 {
+    font-weight: bolder;
+}
 
 #message-el {
     font-style: italic;
@@ -27,7 +30,9 @@ button {
     margin-bottom: 2px;
     margin-top: 2px;
 }
-
+button:hover {
+    border: 1px solid black;
+}
 #table {
     display: flex;
     justify-content: center;
@@ -35,4 +40,8 @@ button {
 .hands {
     display: block;
     margin: 50px;
+}
+#player-id {
+}
+#dealer-id {
 }
