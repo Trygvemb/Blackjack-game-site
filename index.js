@@ -34,7 +34,7 @@ let chips = 200
 let messageEl = document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
-let playerEl = document.getElementById("player-el")
+let balanceEl = document.getElementById("balance-el")
 //dealer
 let dealerCardsEl = document.getElementById("dealer-cards-el")
 let dealerSumEl = document.getElementById("dealer-sum-el")
@@ -44,7 +44,7 @@ let dealerIdEl = document.getElementById("dealer-id")
 
 
 //betting
-playerEl.textContent = "Balance: $" + chips
+balanceEl.textContent = "Balance: $" + chips
 
 function getRandomCard() {
     let randomNumber = Math.floor( Math.random()*13 ) + 1
