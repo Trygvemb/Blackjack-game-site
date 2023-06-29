@@ -14,11 +14,29 @@
         <div id="table">
             <div class="hands">
                 <h3 id="player-id">PLAYER</h3>
-                <p id="cards-el">Your Cards:</p>
+                <div>
+                    <div class="cards-img">
+                        <img class="card-visibility" id="p-card1" src="images/cards/red_joker.png" alt="playing card">
+                        <img class="card-visibility" id="p-card2" src="images/cards/red_joker.png" alt="playing card">
+                        <img class="card-visibility" id="p-card3" src="images/cards/red_joker.png" alt="playing card">
+                        <img class="card-visibility" id="p-card4" src="images/cards/red_joker.png" alt="playing card">
+                        <img class="card-visibility" id="p-card5" src="images/cards/red_joker.png" alt="playing card">
+                        <img class="card-visibility" id="p-card6" src="images/cards/red_joker.png" alt="playing card">
+                    </div>
+                    <p id="cards-el">Your Cards:</p>
+                </div>
                 <p id="sum-el">Your Sum:</p>
             </div>
             <div class="hands">
                 <h3 id="dealer-id">DEALER</h3>
+                <div class="cards-img">
+                    <img class="card-visibility" id="d-card1" src="images/cards/red_joker.png" alt="playing card">
+                    <img class="card-visibility" id="d-card2" src="images/cards/red_joker.png" alt="playing card">
+                    <img class="card-visibility" id="d-card3" src="images/cards/red_joker.png" alt="playing card">
+                    <img class="card-visibility" id="d-card4" src="images/cards/red_joker.png" alt="playing card">
+                    <img class="card-visibility" id="d-card5" src="images/cards/red_joker.png" alt="playing card">
+                    <img class="card-visibility" id="d-card6" src="images/cards/red_joker.png" alt="playing card">
+                </div>
                 <p id="dealer-cards-el">Dealer Cards:</p>
                 <p id="dealer-sum-el">Dealer Sum:</p>
             </div>
@@ -27,7 +45,7 @@
             <button id="new-game-btn" onclick="newGame()">START NEW GAME</button>
         </div>
         <div>
-            <button onclick="startGame()">DEAL</button>
+            <button onclick="deal()">DEAL</button>
             <button onclick="newCard()">HIT</button>
             <button onclick="stand()">STAND</button>
         </div>

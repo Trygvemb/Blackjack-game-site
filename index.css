@@ -81,3 +81,10 @@ button:hover {
 #new-game-btn:hover {
     background: #E16E39;
 } 
+.card-img {
+    display: flex;
+
+}
+img {
+    height: 100px;
+}

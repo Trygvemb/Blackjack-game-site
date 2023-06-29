@@ -16,7 +16,7 @@
 // EXTRA:: HARD ONES
 //##  set ace to either 1 or 11 depending on whats best for the hand
 //  Create user and save data with login
-//  make cards show pictures of cards instead of numbers
+//#  make cards show pictures of cards instead of numbers
 //  create multiple betting options with $2 adjustments
 //  Launch website with netlify and check for bugs 
 //  make buttons inactive so that you cannot hit, stand or deal before bet is places and cannot start new game before wager is payed
@@ -51,9 +51,36 @@ let dealerIdEl = document.getElementById("dealer-id")
 //betting
 let wagerEl = document.getElementById("wager-el")
 let balanceEl = document.getElementById("balance-el")
-
 balanceEl.textContent = chips
 
+// player cards
+let pCard1 = document.getElementById("p-card1")
+let pCard2 = document.getElementById("p-card2")
+let pCard3 = document.getElementById("p-card3")
+let pCard4 = document.getElementById("p-card4")
+let pCard5 = document.getElementById("p-card5")
+let pCard6 = document.getElementById("p-card6")
+// dealer cards
+let dCard1 = document.getElementById("d-card1")
+let dCard2 = document.getElementById("d-card2")
+let dCard3 = document.getElementById("d-card3")
+let dCard4 = document.getElementById("d-card4")
+let dCard5 = document.getElementById("d-card5")
+let dCard6 = document.getElementById("d-card6")
+
+function hideAllCards() {
+    const cardsVisibility = document.querySelectorAll(".card-visibility");
+    cardsVisibility.forEach(cardVis => {
+        cardVis.style.visibility = "hidden";
+    })
+}
+hideAllCards()
+
+function setCardImage() {
+    if (cards != []) {
+
+    }
+}
 
 function getRandomCard() {
     let randomNumber = Math.floor( Math.random()*13 ) + 1
@@ -72,21 +99,6 @@ function renderGame() {
     showWinner()
 }
 
-function startGame() {
-    let firstCard = getRandomCard()
-    let secondCard = getRandomCard()
-    cards = [firstCard, secondCard]
-    sum = firstCard + secondCard
-    hasWon = false
-    hasLost = false
-
-    dynamicAce()
-
-    let thirdCard = getRandomCard()
-    dealerCards = [thirdCard, hiddenCard]
-    dealerSum = thirdCard
-    renderGame()
-}
 
 function renderPlayer() {
     cardsEl.textContent = "Your Cards: "
@@ -144,6 +156,22 @@ function renderDealer() {
 
 }
 
+function deal() {
+    let firstCard = getRandomCard()
+    let secondCard = getRandomCard()
+    cards = [firstCard, secondCard]
+    sum = firstCard + secondCard
+    hasWon = false
+    hasLost = false
+
+    dynamicAce()
+
+    let thirdCard = getRandomCard()
+    dealerCards = [thirdCard, hiddenCard]
+    dealerSum = thirdCard
+    renderGame()
+}
+
 //dealer    : Removes the dealers second hidden card
 function stand() {
         if (dealerCards.includes(0)) {
@@ -154,6 +182,8 @@ function stand() {
         dealerCards.push(card)
         dealerSum += card
         renderDealer()    
+
+        dCard2.document.img
 }
 
 function newCard() {
