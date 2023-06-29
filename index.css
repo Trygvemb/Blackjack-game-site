@@ -3,12 +3,12 @@ body {
     background-image: url("images/table.png");
     background-size: cover;
     font-weight: bold;
-    color: white;
+    color: #D6CFC5;
     text-align: center;
 }
 
 h1 {
-    color: goldenrod;
+    color: #E8871E;
 }
 h3 {
     font-weight: bolder;
@@ -21,7 +21,7 @@ h3 {
 button {
     color: #016f32;
     width: 150px;
-    background: goldenrod;
+    background: #E8871E;
     padding-top: 5px;
     padding-bottom: 5px;
     font-weight: bold;
@@ -31,7 +31,7 @@ button {
     margin-top: 2px;
 }
 button:hover {
-    border: 1px solid black;
+    background: #E16E39;
 }
 #table {
     display: flex;
@@ -44,16 +44,10 @@ button:hover {
 #betting {
     display: flex;
     justify-content: center;
-    margin-top: 30px;
-
-    line-height: 30px;
-    text-align: center;
-    justify-items: center;
-
+    margin-top: 20px;
+    align-items: center;
 }
-#balance-el {
-    margin: auto 0px;
-}
+
 #bet-btn {
     color: #040003;
     width: 150px;
@@ -70,6 +64,20 @@ button:hover {
     
 }    
 #bet-btn:hover {
-    border: 1px solid black;
-
+    background: #B22C2B;
 }
+.wager-table {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}#new-game-btn {
+    height: 40;
+    width: 462;
+    color: #040003;
+    background: #E8871E;
+    margin-bottom: 15px;
+    font-size: larger;
+}
+#new-game-btn:hover {
+    background: #E16E39;
+} 
