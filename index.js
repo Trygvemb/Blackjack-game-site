@@ -14,12 +14,13 @@
 //## if he wins with blackjack, he wins 3 to 2 or one and a half return ex: bet 10 win 25
 
 // EXTRA:: HARD ONES
-//  set ace to either 1 or 11 depending on whats best for the hand
+//##  set ace to either 1 or 11 depending on whats best for the hand
 //  Create user and save data with login
 //  make cards show pictures of cards instead of numbers
 //  create multiple betting options with $2 adjustments
 //  Launch website with netlify and check for bugs 
-
+//  make buttons inactive so that you cannot hit, stand or deal before bet is places and cannot start new game before wager is payed
+//  clean up console.log() in the program
 
 let cards = []
 let sum = 0
@@ -33,6 +34,7 @@ let hasBlackjack = false
 let dealerCards = []
 let dealerSum = 0
 let hiddenCard = 0
+let ace = 11
 //betting
 let chips = 200
 let wager = 0
@@ -77,7 +79,9 @@ function startGame() {
     sum = firstCard + secondCard
     hasWon = false
     hasLost = false
-//dealer
+
+    dynamicAce()
+
     let thirdCard = getRandomCard()
     dealerCards = [thirdCard, hiddenCard]
     dealerSum = thirdCard
@@ -89,6 +93,8 @@ function renderPlayer() {
     for (let i = 0; i < cards.length; i++) {
         cardsEl.textContent += cards[i] + " "
     }
+
+    dynamicAce()
 
     sumEl.textContent = "Your Sum: " + sum
     if (sum <= 20) {
@@ -102,13 +108,18 @@ function renderPlayer() {
     }
     messageEl.textContent = message
     showWinner()
+
+
 }
+
 //dealer
 function renderDealer() {
     dealerCardsEl.textContent = "Dealer Cards: "
     for (let i = 0; i < dealerCards.length; i++) {
         dealerCardsEl.textContent += dealerCards[i] + " "
     }
+
+    dynamicAce()
 
     dealerSumEl.textContent = "Dealer Sum: " + dealerSum
     if (dealerSum > 21 && !hasWon && !hasLost) {
@@ -129,6 +140,8 @@ function renderDealer() {
     }
     messageEl.textContent = message
     showWinner()
+
+
 }
 
 //dealer    : Removes the dealers second hidden card
@@ -155,7 +168,6 @@ function newCard() {
 //Change color to show whos won and add wager to balance
 function showWinner() {
 
-            //fix payout at blackjack
     if (hasTied) {
         playerIdEl.style.color = "black"
         dealerIdEl.style.color = "black"
@@ -180,6 +192,7 @@ function showWinner() {
         dealerIdEl.style.color = "white"
     }
     balanceEl.textContent = chips
+
     console.log("chips" + chips)
 }
 
@@ -218,4 +231,21 @@ function newGame() {
 
     wager = 0
     wagerEl.textContent = wager
+}
+
+function dynamicAce() {
+    if (sum > 21) {
+        let index = -1
+        cards.forEach((card, i) => {
+            if (card === 11) {
+                index = i;
+            }
+        });
+
+        if (index !== -1) {
+            cards[index] = 1
+        }
+            cardsEl.textContent = "Your Cards: " + cards
+    }
+
 }
