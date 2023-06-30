@@ -76,17 +76,43 @@ function hideAllCards() {
 }
 hideAllCards()
 
-function setCardImage() {
-    if (cards != []) {
 
-    }
+function changeCardToImage() {
+    cards.forEach((card, i) => {
+        
+        if (i === 1) {
+            cards[i] = '\u{1F0A1}';
+        } else if (i === 2) {
+            cards[i] = '\u{1F0A2}'
+        } else if (i === 3) {
+            cards[i] = '\u{1F0A3}'
+        } else if (i === 4) {
+            cards[i] = '\u{1F0A4}'
+        } else if (i === 5) {
+            cards[i] = '\u{1F0A5}'
+        } else if (i === 6) {
+            cards[i] = '\u{1F0A6}'
+        } else if (i === 7) {
+            cards[i] = '\u{1F0A7}'
+        } else if (i === 8) {
+            cards[i] = '\u{1F0A8}'
+        } else if (i === 9) {
+            cards[i] = '\u{1F0A9}'
+        } else if (i === 10) {
+            cards[i] = '\u{1F0AA}'
+        } else if (i === 11) {
+            cards[i] = '\u{1F0AB}'
+        } else if (i === 12) {
+            cards[i] = '\u{1F0AC}'
+        } else if (i === 13) {
+            cards[i] = '\u{1F0AD}'
+        }
+    })
 }
 
 function getRandomCard() {
     let randomNumber = Math.floor( Math.random()*13 ) + 1
-    if (randomNumber > 10) {
-        return 10
-    } else if (randomNumber === 1) {
+    if (randomNumber === 1) {
         return 11
     } else {
         return randomNumber
